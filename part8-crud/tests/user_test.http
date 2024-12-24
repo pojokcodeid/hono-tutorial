@@ -1,0 +1,40 @@
+
+### create user
+POST {{BASE_URL}}/users
+Content-Type: application/json
+{
+  "name":"Pojok Code",
+  "email":"code@gmail.com",
+  "password":"P@ssw0rd123"
+}
+
+### get all user
+GET {{BASE_URL}}/users
+
+### get user by id
+GET {{BASE_URL}}/users/0c3c3dbf-785a-4611-8b7e-24bfb3fa4db8
+
+### update user
+PUT {{BASE_URL}}/users/71f6711c-b778-435f-b97c-fc3d876ed7fc
+Authorization: Bearer {{$global.accessToken}}
+Content-Type: application/json
+{
+  "name":"Pojok Code",
+  "email":"code@gmail.com",
+  "password":"1234"
+}
+
+### delete user
+DELETE {{BASE_URL}}/users/dac6c89d-617a-41b4-8e7d-f82036afb4de
+Authorization: Bearer {{$global.accessToken}}
+
+### user login
+POST {{BASE_URL}}/login
+{
+  "email":"code@gmail.com",
+  "password":"1234"
+}
+
+{{
+  $global.accessToken=JSON.parse(response.body).user.accessToken;
+}}
