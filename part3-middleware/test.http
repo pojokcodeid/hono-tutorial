@@ -1,0 +1,2 @@
+### get data
+GET http://localhost:3001/users/1

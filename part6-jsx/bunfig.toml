@@ -1,0 +1,2 @@
+name = "hono-bun-jsx"
+entry = "src/app.ts"

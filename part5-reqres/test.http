@@ -1,0 +1,9 @@
+#### contoh request
+GET http://localhost:3000/request?name=John
+
+### contoh response
+POST http://localhost:3000/response
+Content-Type: application/json
+{
+  "name": "Alice"
+}

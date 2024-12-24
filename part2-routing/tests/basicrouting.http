@@ -1,0 +1,49 @@
+@BASE_URL=http://localhost:3000
+### basic routing get
+GET {{BASE_URL}}/dasar
+### basic routing post
+POST {{BASE_URL}}/dasar
+### basic routing put
+PUT {{BASE_URL}}/dasar
+### basic routing delete
+DELETE {{BASE_URL}}/dasar
+
+### wilcard
+GET {{BASE_URL}}/wild/anything/card
+
+### semua method
+GET {{BASE_URL}}/hello
+
+### patch custem method
+PATCH {{BASE_URL}}/cache
+
+### beberapa method dalam 1 
+DELETE {{BASE_URL}}/post
+
+### beberapa jalur dalam 1 route
+GET {{BASE_URL}}/ja/hello
+
+### route dengan parameter
+GET {{BASE_URL}}/user/pojokcode
+
+### dengan multi parameter
+GET {{BASE_URL}}/posts/001/comment/x001
+
+### paraemeter optional
+GET {{BASE_URL}}/api/animal/animal
+
+### degnan regex
+GET {{BASE_URL}}/post/20241212/testing
+
+### parameter mencakup tanda /
+GET {{BASE_URL}}/posts/confohfile.png
+
+### chaining route
+GET {{BASE_URL}}/endpoint
+POST {{BASE_URL}}/endpoint
+DELETE {{BASE_URL}}/endpoint
+
+### pengelompokan route
+GET {{BASE_URL}}/book
+GET {{BASE_URL}}/book/12
+POST {{BASE_URL}}/book
