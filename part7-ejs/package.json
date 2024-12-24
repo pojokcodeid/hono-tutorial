@@ -1,0 +1,16 @@
+{
+  "name": "part7-ejs",
+  "scripts": {
+    "dev": "bun run --hot src/index.ts"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "hono": "^4.6.14"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/ejs": "^3.1.5",
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
+  }
+}

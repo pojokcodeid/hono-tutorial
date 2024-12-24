@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hono with EJS</title>
+  <link rel="stylesheet" href="/public/styles.css">
+</head>
+<body>
+  <h1><%- title %></h1>
+  <table border="1" cellpadding="5" cellspacing="0">
+    <thead>
+      <tr>
+        <td>id</td>
+        <td>name</td>
+        <td>Email</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% data.map((item) => { %>
+          <tr>
+            <td><%-item.id %></td>
+            <td><%-item.name%></td>
+            <td><%-item.email%></td>
+          </tr>
+      <%})%>
+    </tbody>
+  </table>
+</body>
+</html>
