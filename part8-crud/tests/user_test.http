@@ -5,14 +5,14 @@ Content-Type: application/json
 {
   "name":"Pojok Code",
   "email":"code@gmail.com",
-  "password":"P@ssw0rd123"
+  "password":"1234"
 }
 
 ### get all user
 GET {{BASE_URL}}/users
 
 ### get user by id
-GET {{BASE_URL}}/users/0c3c3dbf-785a-4611-8b7e-24bfb3fa4db8
+GET {{BASE_URL}}/users/71f6711c-b778-435f-b97c-fc3d876ed7f
 
 ### update user
 PUT {{BASE_URL}}/users/71f6711c-b778-435f-b97c-fc3d876ed7fc
@@ -21,7 +21,7 @@ Content-Type: application/json
 {
   "name":"Pojok Code",
   "email":"code@gmail.com",
-  "password":"1234"
+  "password":"P@ssw0rd123"
 }
 
 ### delete user
@@ -32,7 +32,7 @@ Authorization: Bearer {{$global.accessToken}}
 POST {{BASE_URL}}/login
 {
   "email":"code@gmail.com",
-  "password":"1234"
+  "password":"P@ssw0rd123"
 }
 
 {{

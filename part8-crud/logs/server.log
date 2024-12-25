@@ -1,0 +1,106 @@
+[2024-12-25T07:39:51.889Z] [ERROR] controller/userController/addUser: [
+  {
+    "validation": "email",
+    "code": "invalid_string",
+    "message": "Invalid email format",
+    "path": [
+      "email"
+    ]
+  }
+]
+[2024-12-25T07:41:09.718Z] [ERROR] controller/userController/addUser: [
+  {
+    "validation": "email",
+    "code": "invalid_string",
+    "message": "Invalid email format",
+    "path": [
+      "email"
+    ]
+  }
+]
+[2024-12-25T07:41:38.389Z] [ERROR] controller/userController/addUser: [
+  {
+    "validation": "email",
+    "code": "invalid_string",
+    "message": "Invalid email format",
+    "path": [
+      "email"
+    ]
+  }
+]
+[2024-12-25T07:42:17.556Z] [ERROR] controller/userController/addUser: [
+  {
+    "code": "too_small",
+    "minimum": 8,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Password must be at least 8 characters long",
+    "path": [
+      "password"
+    ]
+  },
+  {
+    "validation": "regex",
+    "code": "invalid_string",
+    "message": "Password must contain at least one uppercase letter",
+    "path": [
+      "password"
+    ]
+  },
+  {
+    "validation": "regex",
+    "code": "invalid_string",
+    "message": "Password must contain at least one lowercase letter",
+    "path": [
+      "password"
+    ]
+  },
+  {
+    "validation": "regex",
+    "code": "invalid_string",
+    "message": "Password must contain at least one special character",
+    "path": [
+      "password"
+    ]
+  }
+]
+[2024-12-25T07:42:47.840Z] [ERROR] controller/userController/addUser: [
+  {
+    "validation": "regex",
+    "code": "invalid_string",
+    "message": "Password must contain at least one uppercase letter",
+    "path": [
+      "password"
+    ]
+  },
+  {
+    "validation": "regex",
+    "code": "invalid_string",
+    "message": "Password must contain at least one lowercase letter",
+    "path": [
+      "password"
+    ]
+  },
+  {
+    "validation": "regex",
+    "code": "invalid_string",
+    "message": "Password must contain at least one special character",
+    "path": [
+      "password"
+    ]
+  }
+]
+[2024-12-25T07:54:25.525Z] [ERROR] controller/todoController/addTodo: [
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Title is required",
+    "path": [
+      "title"
+    ]
+  }
+]

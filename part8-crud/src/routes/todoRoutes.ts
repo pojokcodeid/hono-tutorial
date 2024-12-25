@@ -7,7 +7,7 @@ import {
   editTodo,
   removeTodo,
 } from "../controllers/todoController";
-import { validateAccessToken } from "../controllers/errorController";
+import { validateAccessToken } from "../validations/accessValidator";
 
 const router = new Hono();
 

@@ -1,5 +1,5 @@
 import { Context } from "hono";
-import { verifyToken } from "../jwt";
+import { verifyToken } from "../utils/jwt";
 
 // validate header bearer acess token from request
 export const validateAccessToken = async (
