@@ -8,14 +8,15 @@ export const validateAccessToken = async (
 ) => {
   const authHeader = c.req.header("Authorization");
   const token = authHeader?.split(" ")[1];
+  // console.log(token);
   if (!token) {
-    return c.json({ message: "Unauthorized" }, 401);
+    return c.json({ message: "Unauthorized", data: null }, 401);
   }
   // validate jwt token
   try {
     await verifyToken(token);
     await next();
   } catch (error) {
-    return c.json({ message: "Unauthorized" }, 401);
+    return c.json({ message: "Unauthorized", data: null }, 401);
   }
 };

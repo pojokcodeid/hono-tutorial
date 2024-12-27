@@ -9,18 +9,26 @@ import {
 } from "../models/userModel";
 import { logger } from "../utils/logger";
 import { validateUser } from "../validations/userValidation";
+import { date } from "zod";
 
 // Mendapatkan semua pengguna
 export const getUsers = async (c: Context) => {
   try {
     const users = await getAllUsers();
-    return c.json(users);
+    return c.json(
+      {
+        message: "success",
+        data: users,
+      },
+      200
+    );
   } catch (error: any) {
     logger.error("controller/userController/getUsers: " + error);
     return c.json(
       {
         message:
           error.message || "Something went wrong, please contact support",
+        data: null,
       },
       500
     );
@@ -33,15 +41,22 @@ export const getUser = async (c: Context) => {
     const { id } = c.req.param();
     const user = await getUserById(id);
     if (user) {
-      return c.json(user);
+      return c.json(
+        {
+          message: "success",
+          data: user,
+        },
+        200
+      );
     }
-    return c.json({ message: "User not found" }, 404);
+    return c.json({ message: "User not found", data: null }, 404);
   } catch (error: any) {
     logger.error("controller/userController/getUser: " + error);
     return c.json(
       {
         message:
           error.message || "Something went wrong, please contact support",
+        data: null,
       },
       500
     );
@@ -58,7 +73,7 @@ export const addUser = async (c: Context) => {
     }>();
     const { name, email, password } = validateUser.parse(data);
     const user = await createUser(name, email, password);
-    return c.json(user, 201);
+    return c.json({ message: "User created", data: user }, 201);
   } catch (error: any) {
     logger.error("controller/userController/addUser: " + error);
     return c.json(
@@ -66,6 +81,7 @@ export const addUser = async (c: Context) => {
         message:
           JSON.parse(error.message)[0].message ||
           "Something went wrong, please contact support",
+        data: null,
       },
       500
     );
@@ -84,9 +100,9 @@ export const editUser = async (c: Context) => {
     const { name, email, password } = validateUser.parse(data);
     const user = await updateUser(id, name, email, password);
     if (user) {
-      return c.json(user);
+      return c.json({ message: "User updated", data: user }, 200);
     }
-    return c.json({ message: "User not found" }, 404);
+    return c.json({ message: "User not found", data: null }, 404);
   } catch (error: any) {
     logger.error("controller/userController/addUser: " + error);
     return c.json(
@@ -94,6 +110,7 @@ export const editUser = async (c: Context) => {
         message:
           JSON.parse(error.message)[0].message ||
           "Something went wrong, please contact support",
+        data: null,
       },
       500
     );
@@ -106,15 +123,16 @@ export const removeUser = async (c: Context) => {
     const { id } = c.req.param();
     const success = await deleteUser(id);
     if (success) {
-      return c.json({ message: "User deleted" });
+      return c.json({ message: "User deleted", data: success }, 200);
     }
-    return c.json({ message: "User not found" }, 404);
+    return c.json({ message: "User not found", data: null }, 404);
   } catch (error: any) {
     logger.error("controller/userController/removeUser: " + error);
     return c.json(
       {
         message:
           error.message || "Something went wrong, please contact support",
+        data: null,
       },
       500
     );
@@ -131,15 +149,16 @@ export const loginUser = async (c: Context) => {
     }>();
     const user = await verifyUser(email, password);
     if (user) {
-      return c.json({ message: "Login successful", user });
+      return c.json({ message: "Login successful", data: user });
     }
-    return c.json({ message: "Invalid credentials" }, 401);
+    return c.json({ message: "Invalid credentials", data: null }, 401);
   } catch (error: any) {
     logger.error("controller/userController/loginUser: " + error);
     return c.json(
       {
         message:
           error.message || "Something went wrong, please contact support",
+        data: null,
       },
       500
     );

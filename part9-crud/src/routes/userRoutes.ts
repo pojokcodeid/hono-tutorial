@@ -12,8 +12,8 @@ import { validateAccessToken } from "../validations/accessValidator";
 
 const router = new Hono();
 
-router.get("/users", getUsers);
-router.get("/users/:id", getUser);
+router.get("/users", validateAccessToken, getUsers);
+router.get("/users/:id", validateAccessToken, getUser);
 router.post("/users", addUser);
 router.put("/users/:id", validateAccessToken, editUser);
 router.delete("/users/:id", validateAccessToken, removeUser);

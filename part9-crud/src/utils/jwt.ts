@@ -1,7 +1,7 @@
 import { sign, verify } from "hono/jwt";
 
 const secret = "mySecretKey";
-const expired = Math.floor(Date.now() / 1000) + 60 * 5; // Token expires in 5 minutes
+const expired = Math.floor(Date.now() / 1000) + 60 * 15; // Token expires in 15 minutes
 export const generateAccessToken = async (objSub: any) => {
   const payload = {
     sub: objSub,
