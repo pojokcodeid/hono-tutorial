@@ -25,5 +25,5 @@ Content-Type: application/json
 }
 
 ### delete todos
-DELETE {{BASE_URL}}/todos/xnm7Eg3weTyhyNIFUsugX
+DELETE {{BASE_URL}}/todos/69bb6c9f-9414-403c-a000-c96630dbd2c1
 Authorization: Bearer {{$global.accessToken}}

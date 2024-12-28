@@ -1,5 +1,6 @@
 // src/models/todoModel.ts
 import { PrismaClient, Todo } from "@prisma/client";
+import { logger } from "../utils/logger";
 
 const prisma = new PrismaClient();
 
@@ -39,7 +40,8 @@ export const deleteTodo = async (id: string): Promise<boolean> => {
       where: { id },
     });
     return true;
-  } catch (error) {
+  } catch (error: unknown) {
+    logger.error("models/todoModel/deleteTodo: " + error);
     return false;
   }
 };

@@ -31,7 +31,7 @@ http://localhost:3000/
 ```json
 {
   "message": "User created",
-  "data":{
+  "data": {
     "id": "71f6711c-b778-435f-b97c-fc3d876ed7fc",
     "email": "code@gmail.com",
     "password": "********",
@@ -45,7 +45,7 @@ http://localhost:3000/
 ```json
 {
   "message": "User not found",
-  "data":null
+  "data": null
 }
 ```
 
@@ -64,6 +64,7 @@ http://localhost:3000/
 ### Response
 
 - Success (200)
+
 ```json
 {
   "message": "success",
@@ -77,13 +78,16 @@ http://localhost:3000/
   ]
 }
 ```
+
 - Error (500)
+
 ```json
 {
   "message": "somting went wrong",
   "data": null
 }
 ```
+
 ## End Point Get User By Id
 
 ### Request
@@ -99,6 +103,7 @@ http://localhost:3000/
 ### Response
 
 - Success (200)
+
 ```json
 {
   "message": "success",
@@ -112,13 +117,16 @@ http://localhost:3000/
   ]
 }
 ```
+
 - Error (500)
+
 ```json
 {
   "message": "somting went wrong",
   "data": null
 }
 ```
+
 ## End Point Update User
 
 ### Request
@@ -134,6 +142,7 @@ http://localhost:3000/
 ### Response
 
 - Success (200)
+
 ```json
 {
   "message": "User updated",
@@ -147,13 +156,16 @@ http://localhost:3000/
   ]
 }
 ```
+
 - Error (500)
+
 ```json
 {
   "message": "somting went wrong",
   "data": null
 }
 ```
+
 ## End Point Delete User
 
 ### Request
@@ -169,19 +181,23 @@ http://localhost:3000/
 ### Response
 
 - Success (200)
+
 ```json
 {
   "message": "User deleted",
   "data": true
 }
 ```
+
 - Error (500)
+
 ```json
 {
   "message": "User not found",
   "data": null
 }
 ```
+
 ## Endpoints User Login
 
 ### Request
@@ -208,7 +224,7 @@ http://localhost:3000/
 ```json
 {
   "message": "Login successful",
-  "data":{
+  "data": {
     "id": "71f6711c-b778-435f-b97c-fc3d876ed7fc",
     "email": "code@gmail.com",
     "password": "********",

@@ -2,6 +2,7 @@
 import { PrismaClient, User } from "@prisma/client";
 import bcrypt from "bcrypt";
 import { generateAccessToken } from "../utils/jwt";
+import { logger } from "../utils/logger";
 
 const prisma = new PrismaClient();
 
@@ -64,6 +65,7 @@ export const deleteUser = async (id: string): Promise<boolean> => {
     await prisma.user.delete({ where: { id } });
     return true;
   } catch (error) {
+    logger.error("models/userModel/deleteUser: " + error);
     return false;
   }
 };

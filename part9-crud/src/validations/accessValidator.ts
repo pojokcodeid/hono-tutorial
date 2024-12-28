@@ -17,6 +17,7 @@ export const validateAccessToken = async (
     await verifyToken(token);
     await next();
   } catch (error) {
+    console.log(error);
     return c.json({ message: "Unauthorized", data: null }, 401);
   }
 };

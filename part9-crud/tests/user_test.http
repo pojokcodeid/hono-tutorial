@@ -4,7 +4,7 @@ POST {{BASE_URL}}/users
 Content-Type: application/json
 {
   "name":"Pojok Code",
-  "email":"code@gmail.com",
+  "email":"code@gmail",
   "password":"P@ssw0rd123"
 }
 

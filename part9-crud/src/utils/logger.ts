@@ -30,7 +30,10 @@ const createLogger = (level: string) => {
   return (message: string) => {
     const timestamp = new Date().toISOString();
     const logMessage = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
-    console.log(logMessage); // Cetak ke console
+    const node = process.env.NODE_ENV || "development";
+    if (node == "development") {
+      console.log(logMessage); // Cetak ke console
+    }
     writeLogToFile(logMessage); // Simpan ke file
   };
 };
