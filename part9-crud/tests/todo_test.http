@@ -12,11 +12,11 @@ GET {{BASE_URL}}/todos
 Authorization: Bearer {{$global.accessToken}}
 
 ### get todo by id
-GET {{BASE_URL}}/todos/2ed49d8c-67b6-4274-9de8-156dfbbc47e2
+GET {{BASE_URL}}/todos/1be1fd7a-abc4-49c9-8c89-55ba470f1c29
 Authorization: Bearer {{$global.accessToken}}
 
 ### update todos
-PUT {{BASE_URL}}/todos/2ed49d8c-67b6-4274-9de8-156dfbbc47e2
+PUT {{BASE_URL}}/todos/1be1fd7a-abc4-49c9-8c89-55ba470f1c29
 Authorization: Bearer {{$global.accessToken}}
 Content-Type: application/json
 {

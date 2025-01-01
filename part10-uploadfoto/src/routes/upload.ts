@@ -1,11 +1,12 @@
 import { Hono } from "hono";
-import { existsSync, mkdirSync, createWriteStream, unlinkSync } from "fs";
+import { existsSync, createWriteStream, unlinkSync } from "fs";
+import { mkdir } from "fs/promises";
 import path from "path";
 import { createHash } from "crypto";
 
-const uploadDir = path.join(process.cwd(), "uploads");
+const uploadDir = path.join(process.cwd(), "public/img");
 if (!existsSync(uploadDir)) {
-  mkdirSync(uploadDir);
+  mkdir(uploadDir, { recursive: true });
 }
 
 export const uploadRoute = new Hono();
@@ -33,7 +34,7 @@ uploadRoute.post("/", async (c) => {
     })
   );
   // upload image to directory
-  let fileName="";
+  let fileName = "";
   processImages.forEach((image) => {
     // Generate MD5 hash for file name
     const hash = createHash("md5").update(image.name).digest("hex");
@@ -48,13 +49,18 @@ uploadRoute.post("/", async (c) => {
     writeStream.write(image.buffer);
     writeStream.end();
   });
+  const url = new URL(c.req.url);
+  const protocol = url.protocol;
+  const host = c.req.header("host");
+  console.log(url);
+  let fullurl = `${protocol}//${host}/public/img/${fileName}`;
   // disini process save data ke database terkait image
   // setelah save berhasil kembalikan response
   return c.json(
     {
       message: "hello Hono form image route",
       files: {
-        name: "uploads/"+fileName,
+        name: fullurl,
         type: processImages[0].type,
         size: processImages[0].size,
       },

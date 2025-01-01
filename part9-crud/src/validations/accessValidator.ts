@@ -14,10 +14,11 @@ export const validateAccessToken = async (
   }
   // validate jwt token
   try {
-    await verifyToken(token);
+    const payload = await verifyToken(token);
+    c.set("user_id", payload.id);
     await next();
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
-    console.log(error);
     return c.json({ message: "Unauthorized", data: null }, 401);
   }
 };

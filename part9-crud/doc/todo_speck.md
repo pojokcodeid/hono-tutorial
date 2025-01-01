@@ -34,6 +34,7 @@ http://localhost:3000/
   "data": {
     "id": "4584cd34-8092-46aa-84ee-82ecea9fe129",
     "title": "example todo",
+    "userId": "xxxxxxxxxxxxxxxxxxxxx",
     "description": "ini adalah contoh descripsi",
     "createdAt": "2024-12-27T10:42:00.758Z",
     "updatedAt": "2024-12-27T10:42:00.758Z"
@@ -73,6 +74,7 @@ http://localhost:3000/
     {
       "id": "4584cd34-8092-46aa-84ee-82ecea9fe129",
       "title": "example todo",
+      "userId": "xxxxxxxxxxxxxxxxxxxxx",
       "description": "ini adalah contoh descripsi",
       "createdAt": "2024-12-27T10:42:00.758Z",
       "updatedAt": "2024-12-27T10:42:00.758Z"
@@ -112,6 +114,7 @@ http://localhost:3000/
   "data": {
     "id": "4584cd34-8092-46aa-84ee-82ecea9fe129",
     "title": "example todo",
+    "userId": "xxxxxxxxxxxxxxxxxxxxx",
     "description": "ini adalah contoh descripsi",
     "createdAt": "2024-12-27T10:42:00.758Z",
     "updatedAt": "2024-12-27T10:42:00.758Z"
@@ -150,6 +153,7 @@ http://localhost:3000/
   "data": {
     "id": "4584cd34-8092-46aa-84ee-82ecea9fe129",
     "title": "example todo",
+    "userId": "xxxxxxxxxxxxxxxxxxxxx",
     "description": "ini adalah contoh descripsi",
     "createdAt": "2024-12-27T10:42:00.758Z",
     "updatedAt": "2024-12-27T10:42:00.758Z"

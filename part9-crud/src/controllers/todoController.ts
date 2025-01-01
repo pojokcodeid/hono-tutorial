@@ -47,7 +47,8 @@ export const addTodo = async (c: Context) => {
       description: string;
     }>();
     const { title, description } = validateTodo.parse(data);
-    const todo = await createTodo(title, description);
+    const userId = c.get("user_id");
+    const todo = await createTodo(title, description, userId);
     return c.json({ message: "Todo created", data: todo }, 201);
   } catch (error: unknown) {
     logger.error("controller/todoController/addTodo: " + error);
@@ -81,7 +82,8 @@ export const editTodo = async (c: Context) => {
       description: string;
     }>();
     const { title, description } = validateTodo.parse(data);
-    const todo = await updateTodo(id, title, description);
+    const userId = c.get("user_id");
+    const todo = await updateTodo(id, title, description, userId);
     if (todo) {
       return c.json({ message: "Todo updated", data: todo }, 200);
     }

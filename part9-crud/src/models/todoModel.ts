@@ -16,21 +16,23 @@ export const getTodoById = async (id: string): Promise<Todo | null> => {
 
 export const createTodo = async (
   title: string,
-  description: string
+  description: string,
+  userId: string
 ): Promise<Todo> => {
   return await prisma.todo.create({
-    data: { title, description },
+    data: { title, description, userId },
   });
 };
 
 export const updateTodo = async (
   id: string,
   title: string,
-  description: string
+  description: string,
+  userId: string
 ): Promise<Todo | null> => {
   return await prisma.todo.update({
     where: { id },
-    data: { title, description },
+    data: { title, description, userId },
   });
 };
 
